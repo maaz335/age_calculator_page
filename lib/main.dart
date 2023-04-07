@@ -85,7 +85,7 @@ class age_calculator extends StatelessWidget {
                   child: Text("0/10"),
                 ),
                 Align(
-                  alignment: Alignment.topLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     "Date of Birth",
                     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
