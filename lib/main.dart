@@ -38,7 +38,8 @@ class age_calculator extends StatelessWidget {
                       padding: EdgeInsets.only(left: 6),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black45),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                           borderRadius: BorderRadius.all(Radius.circular(5))
+                      ),
                       child: DropdownButton<String>(
                         value: dropdownValue2,
                         underline: Container(
@@ -96,7 +97,8 @@ class age_calculator extends StatelessWidget {
                       padding: EdgeInsets.only(left: 9),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black45),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                          borderRadius: BorderRadius.all(Radius.circular(5))
+                      ),
                       width: MediaQuery.of(context).size.width * 0.22,
                       child: DropdownButton<String>(
                         value: dropdownValue2,
@@ -128,7 +130,8 @@ class age_calculator extends StatelessWidget {
                       padding: EdgeInsets.only(left: 9),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black45),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                           borderRadius: BorderRadius.all(Radius.circular(5))
+                      ),
                       width: MediaQuery.of(context).size.width * 0.22,
                       child: DropdownButton<String>(
                         value: dropdownValue3,
@@ -160,7 +163,8 @@ class age_calculator extends StatelessWidget {
                       padding: EdgeInsets.only(left: 9),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black45),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                           borderRadius: BorderRadius.all(Radius.circular(5))
+                        ),
                       width: MediaQuery.of(context).size.width * 0.22,
                       child: DropdownButton<String>(
                         value: dropdownValue4,
@@ -217,7 +221,7 @@ class age_calculator extends StatelessWidget {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
+                             borderRadius: BorderRadius.circular(5.0),
                               side: BorderSide(color: Colors.black45)
                           ),
                         ),
@@ -232,7 +236,7 @@ class age_calculator extends StatelessWidget {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
+                            borderRadius: BorderRadius.circular(5.0),
                               side: BorderSide(color: Colors.black45)
                           ),
                         ),
@@ -246,12 +250,11 @@ class age_calculator extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 1.0,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.white),
-                      foregroundColor: MaterialStatePropertyAll(Colors.black),
+
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.black45)
+                           borderRadius: BorderRadius.circular(5.0),
+
                         ),
                       ),
                     ),
@@ -283,7 +286,7 @@ class Inputfield extends StatelessWidget {
               borderSide: BorderSide(
                 width: 3,
               ),
-              borderRadius: BorderRadius.circular(50.0),
+               borderRadius: BorderRadius.circular(5.0),
             ),
             labelText: Title),
       ),
