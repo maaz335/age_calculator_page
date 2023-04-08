@@ -240,37 +240,43 @@ class age_calculator extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.white),
-                          foregroundColor:
-                              MaterialStatePropertyAll(Colors.black),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50.0),
-                                side: BorderSide(color: Colors.black45)),
+                      Container(
+                        width: MediaQuery.of(context).size.width * .3,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(Colors.white),
+                            foregroundColor:
+                                MaterialStatePropertyAll(Colors.black),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  side: BorderSide(color: Colors.black45)),
+                            ),
                           ),
+                          onPressed: () {},
+                          child: Text("Male"),
                         ),
-                        onPressed: () {},
-                        child: Text("Male"),
                       ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.white),
-                          foregroundColor:
-                              MaterialStatePropertyAll(Colors.black),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50.0),
-                                side: BorderSide(color: Colors.black45)),
+                      Container(
+                        width: MediaQuery.of(context).size.width * .3,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(Colors.white),
+                            foregroundColor:
+                                MaterialStatePropertyAll(Colors.black),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  side: BorderSide(color: Colors.black45)),
+                            ),
                           ),
+                          onPressed: () {},
+                          child: Text("Female"),
                         ),
-                        onPressed: () {},
-                        child: Text("Female"),
                       ),
                     ],
                   ),
@@ -278,10 +284,14 @@ class age_calculator extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 1.0,
                     child: ElevatedButton(
                       style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStatePropertyAll(Colors.black45),
+                        backgroundColor: MaterialStatePropertyAll(Colors.white),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50.0),
+                            side: BorderSide(color: Colors.black45),
                           ),
                         ),
                       ),
