@@ -21,6 +21,7 @@ class age_calculator extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          color: Colors.grey.shade200,
           height: MediaQuery.of(context).size.height * 1.0,
           width: MediaQuery.of(context).size.width * 1.0,
           child: Padding(
@@ -33,14 +34,14 @@ class age_calculator extends StatelessWidget {
                     children: [
                       Container(
                           child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.arrow_back_ios),
-                      )),
+                            onPressed: () {},
+                            icon: Icon(Icons.arrow_back_ios),
+                          )),
                       Container(
                         child: Text(
                           "Let's Start",
                           style:
-                              TextStyle(fontSize: 20, color: Colors.blueAccent),
+                          TextStyle(fontSize: 20, color: Colors.blueAccent),
                         ),
                       )
                     ],
@@ -50,8 +51,10 @@ class age_calculator extends StatelessWidget {
                   Row(
                     children: [
                       Container(
+                        height: MediaQuery.of(context).size.height * 0.05,
                         padding: EdgeInsets.only(left: 6),
                         decoration: BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
@@ -70,13 +73,12 @@ class age_calculator extends StatelessWidget {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Container(
-                                height: 40,
                                 width: 55,
                                 child: Row(
                                   children: [
                                     Container(
-                                      width: 30,
                                       height: 30,
+                                      width: 30,
                                       child: Image(
                                         image:
                                             AssetImage('Assets/download.jpg'),
@@ -120,8 +122,10 @@ class age_calculator extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
+                        height: MediaQuery.of(context).size.height * 0.05,
                         padding: EdgeInsets.only(left: 25),
                         decoration: BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
@@ -150,8 +154,10 @@ class age_calculator extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height * 0.05,
                         padding: EdgeInsets.only(left: 23),
                         decoration: BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
@@ -180,8 +186,10 @@ class age_calculator extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height * 0.05,
                         padding: EdgeInsets.only(left: 23),
                         decoration: BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
@@ -236,6 +244,7 @@ class age_calculator extends StatelessWidget {
                     children: [
                       Container(
                         width: MediaQuery.of(context).size.width * .44,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
@@ -255,6 +264,7 @@ class age_calculator extends StatelessWidget {
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width * .44,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
@@ -274,8 +284,12 @@ class age_calculator extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
                   Container(
                     width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 0.05,
                     child: ElevatedButton(
                       style: ButtonStyle(
                         foregroundColor: MaterialStatePropertyAll(Colors.black),
@@ -313,17 +327,23 @@ class Inputfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
-      child: TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                width: 3,
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.05,
+        child: TextField(
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+              filled: true,
+              //<-- SEE HERE
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.circular(25.0),
               ),
-              borderRadius: BorderRadius.circular(25.0),
-            ),
-            labelText: Title,
-            labelStyle: TextStyle(color: Colors.black45)),
+              labelText: Title,
+              labelStyle: TextStyle(color: Colors.black45)),
+        ),
       ),
     );
   }
