@@ -61,7 +61,7 @@ class age_calculator extends StatelessWidget {
                             color: Colors.white,
                           ),
                           icon: const Icon(Icons.arrow_drop_down),
-                          style: const TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black45),
                           onChanged: (String? value) {
                             // This is called when the user selects an item.
                           },
@@ -85,7 +85,8 @@ class age_calculator extends StatelessWidget {
                                     Text(
                                       ' +91',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black45),
                                     ),
                                   ],
                                 ),
@@ -107,22 +108,24 @@ class age_calculator extends StatelessWidget {
                     child: Text("0/10"),
                   ),
                   Align(
-                    alignment: Alignment.center,
+                    alignment: Alignment.topLeft,
                     child: Text(
                       "Date of Birth",
-                      style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 35,
+                      ),
                     ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(left: 9),
+                        padding: EdgeInsets.only(left: 25),
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
-                        width: MediaQuery.of(context).size.width * 0.22,
+                        width: MediaQuery.of(context).size.width * 0.29,
                         child: DropdownButton<String>(
                           value: dropdownValue2,
                           underline: Container(
@@ -130,7 +133,7 @@ class age_calculator extends StatelessWidget {
                           ),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           elevation: 16,
-                          style: const TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black45),
                           onChanged: (String? value) {
                             // This is called when the user selects an item.
                           },
@@ -146,16 +149,13 @@ class age_calculator extends StatelessWidget {
                           }).toList(),
                         ),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.11,
-                      ),
                       Container(
-                        padding: EdgeInsets.only(left: 9),
+                        padding: EdgeInsets.only(left: 23),
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
-                        width: MediaQuery.of(context).size.width * 0.22,
+                        width: MediaQuery.of(context).size.width * 0.29,
                         child: DropdownButton<String>(
                           value: dropdownValue3,
                           underline: Container(
@@ -163,7 +163,7 @@ class age_calculator extends StatelessWidget {
                           ),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           elevation: 16,
-                          style: const TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black45),
                           onChanged: (String? value) {
                             // This is called when the user selects an item.
                           },
@@ -179,16 +179,13 @@ class age_calculator extends StatelessWidget {
                           }).toList(),
                         ),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.12,
-                      ),
                       Container(
-                        padding: EdgeInsets.only(left: 9),
+                        padding: EdgeInsets.only(left: 23),
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.black45),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
-                        width: MediaQuery.of(context).size.width * 0.22,
+                        width: MediaQuery.of(context).size.width * 0.29,
                         child: DropdownButton<String>(
                           value: dropdownValue4,
                           underline: Container(
@@ -196,7 +193,7 @@ class age_calculator extends StatelessWidget {
                           ),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           elevation: 16,
-                          style: const TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black45),
                           onChanged: (String? value) {
                             // This is called when the user selects an item.
                           },
@@ -221,15 +218,15 @@ class age_calculator extends StatelessWidget {
                       children: [
                         Text(
                           "Years: 0, ",
-                          style: TextStyle(fontSize: 30),
+                          style: TextStyle(fontSize: 30, color: Colors.black),
                         ),
                         Text(
                           "Months: 0, ",
-                          style: TextStyle(fontSize: 30),
+                          style: TextStyle(fontSize: 30, color: Colors.black),
                         ),
                         Text(
                           "Days: 0",
-                          style: TextStyle(fontSize: 30),
+                          style: TextStyle(fontSize: 30, color: Colors.black),
                         ),
                       ],
                     ),
@@ -238,13 +235,13 @@ class age_calculator extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * .3,
+                        width: MediaQuery.of(context).size.width * .44,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll(Colors.white),
                             foregroundColor:
-                                MaterialStatePropertyAll(Colors.black),
+                                MaterialStatePropertyAll(Colors.black45),
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(
                               RoundedRectangleBorder(
@@ -257,13 +254,13 @@ class age_calculator extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * .3,
+                        width: MediaQuery.of(context).size.width * .44,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll(Colors.white),
                             foregroundColor:
-                                MaterialStatePropertyAll(Colors.black),
+                                MaterialStatePropertyAll(Colors.black45),
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(
                               RoundedRectangleBorder(
@@ -281,8 +278,7 @@ class age_calculator extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 1.0,
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStatePropertyAll(Colors.black45),
+                        foregroundColor: MaterialStatePropertyAll(Colors.black),
                         backgroundColor: MaterialStatePropertyAll(Colors.white),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -323,7 +319,8 @@ class Inputfield extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(25.0),
             ),
-            labelText: Title),
+            labelText: Title,
+            labelStyle: TextStyle(color: Colors.black45)),
       ),
     );
   }
