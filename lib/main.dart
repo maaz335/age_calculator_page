@@ -27,11 +27,8 @@ class age_calculator extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .1,
-                  ),
                   Row(
                     children: [
                       Container(
@@ -298,9 +295,6 @@ class age_calculator extends StatelessWidget {
                       onPressed: () {},
                       child: Text("Register"),
                     ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .15,
                   ),
                 ],
               ),
