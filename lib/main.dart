@@ -6,9 +6,9 @@ void main() => runApp(
       ),
     );
 const List<String> list1 = <String>['One', 'Two', 'Three', 'Four'];
-const List<String> list2 = <String>['Year', 'Two', 'Three', 'Four'];
+const List<String> list2 = <String>['Date', 'Two', 'Three', 'Four'];
 const List<String> list3 = <String>['Month', 'Two', 'Three', 'Four'];
-const List<String> list4 = <String>['Days', 'Two', 'Three', 'Four'];
+const List<String> list4 = <String>['Year', 'Two', 'Three', 'Four'];
 
 class age_calculator extends StatelessWidget {
   String dropdownValue1 = list1.first;
@@ -100,7 +100,7 @@ class age_calculator extends StatelessWidget {
                       ),
                       Container(
                           width: MediaQuery.of(context).size.width * 0.646,
-                          child: Inputfield(Title: "Phone")),
+                          child: Inputfield(Title: "Phone Number")),
                     ],
                   ),
                   Align(
@@ -112,7 +112,7 @@ class age_calculator extends StatelessWidget {
                     child: Text(
                       "Date of Birth",
                       style: TextStyle(
-                        fontSize: 35,
+                        fontSize: 25,
                       ),
                     ),
                   ),
@@ -289,7 +289,10 @@ class age_calculator extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Register"),
+                      child: Text(
+                        "Register",
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
                   ),
                 ],
