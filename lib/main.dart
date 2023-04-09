@@ -1,13 +1,99 @@
 import 'package:age_calculator/age_calculator.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 void main() => runApp(
       MaterialApp(
         home: age_calculator(),
       ),
     );
+const List<String> list1 = <String>[
+  'Year',
+  '1990',
+  '1991',
+  '1992',
+  '1993',
+  '1994',
+  '1995',
+  '1996',
+  '1997',
+  '1998',
+  '1999',
+  '2000',
+  '2001',
+  '2002',
+  '2003',
+  '2004',
+  '2005',
+  '2006',
+  '2007',
+  '2008',
+  '2009',
+  '2010',
+  '2011',
+  '2012',
+  '2013',
+  '2014',
+  '2015',
+  '2016',
+  '2017',
+  '2018',
+  '2019',
+  '2020',
+  '2021',
+  '2022',
+  '2023',
+  '2024'
+]; //'2000',
 const List<String> list2 = <String>['Date', 'Two', 'Three', 'Four'];
+const List<String> list3 = <String>[
+  'Month',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+const List<String> list4 = <String>[
+  'Date',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+  '24',
+  '25',
+  '26',
+  '27',
+  '28',
+  '29',
+  '30',
+  '31'
+];
 
 class age_calculator extends StatefulWidget {
   @override
@@ -15,16 +101,19 @@ class age_calculator extends StatefulWidget {
 }
 
 class _age_calculatorState extends State<age_calculator> {
-  TextEditingController dateInput = TextEditingController();
+  // TextEditingController dateInput = TextEditingController();
 
-  @override
-  void initState() {
-    dateInput.text = ""; //set the initial value of text field
-
-    super.initState();
-  }
-
+  // @override
+  // void initState() {
+  //   dateInput.text = ""; //set the initial value of text field
+  //
+  //   super.initState();
+  // }
+  String dropdownValue1 = list1.first;
   String dropdownValue2 = list2.first;
+  String dropdownValue3 = list3.first;
+  String dropdownValue4 = list4.first;
+  String? month;
   DateDuration? duration;
 
   @override
@@ -132,53 +221,181 @@ class _age_calculatorState extends State<age_calculator> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.01,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).size.height * 0.01),
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
-                  child: TextField(
-                    controller: dateInput,
-                    onTap: () async {
-                      DateTime? pickedDate = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime(1950),
-                          //DateTime.now() - not to allow to choose before today.
-                          lastDate: DateTime(2100));
-
-                      if (pickedDate != null) {
-                        print(
-                            pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
-                        String formattedDate =
-                            DateFormat('yyyy-MM-dd').format(pickedDate);
-                        print(
-                            formattedDate); //formatted date output using intl package =>  2021-03-16
+              Row(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.085),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black45),
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    child: DropdownButton<String>(
+                      value: dropdownValue4,
+                      underline: Container(
+                        color: Colors.white,
+                      ),
+                      icon: const Icon(Icons.arrow_drop_down),
+                      style: const TextStyle(color: Colors.black45),
+                      onChanged: (String? value) {
+                        // This is called when the user selects an item.
                         setState(() {
-                          dateInput.text =
-                              formattedDate; //set output date to TextField value.
-
-                          // Find out your age as of today's date 2021-03-08
-                          duration = AgeCalculator.age(pickedDate);
+                          dropdownValue4 = value!;
                         });
-                      } else {}
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                        filled: true,
-                        //<-- SEE HERE
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 3,
-                          ),
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                        labelText: "Date of Birth",
-                        labelStyle: TextStyle(color: Colors.black45)),
+                      },
+                      items:
+                          list4.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
                   ),
-                ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.085),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black45),
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    child: DropdownButton<String>(
+                      value: dropdownValue3,
+                      underline: Container(
+                        color: Colors.white,
+                      ),
+                      icon: const Icon(Icons.arrow_drop_down),
+                      style: const TextStyle(color: Colors.black45),
+                      onChanged: (String? value) {
+                        // This is called when the user selects an item.
+                        setState(() {
+                          dropdownValue3 = value!;
+                          if (dropdownValue3 == 'January') {
+                            month = '01';
+                          } else if (dropdownValue3 == 'February') {
+                            month = '02';
+                          } else if (dropdownValue3 == 'March') {
+                            month = '03';
+                          } else if (dropdownValue3 == 'April') {
+                            month = '04';
+                          } else if (dropdownValue3 == 'May') {
+                            month = '05';
+                          } else if (dropdownValue3 == 'June') {
+                            month = '06';
+                          } else if (dropdownValue3 == 'July') {
+                            month = '07';
+                          } else if (dropdownValue3 == 'August') {
+                            month = '08';
+                          } else if (dropdownValue3 == 'September') {
+                            month = '09';
+                          } else if (dropdownValue3 == 'October') {
+                            month = '10';
+                          } else if (dropdownValue3 == 'November') {
+                            month = '11';
+                          } else if (dropdownValue3 == 'December') {
+                            month = '12';
+                          }
+                        });
+                      },
+                      items:
+                          list3.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.085),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black45),
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    child: DropdownButton<String>(
+                      value: dropdownValue1,
+                      underline: Container(
+                        color: Colors.white,
+                      ),
+                      icon: const Icon(Icons.arrow_drop_down),
+                      style: const TextStyle(color: Colors.black45),
+                      onChanged: (String? value) {
+                        // This is called when the user selects an item.
+                        setState(() {
+                          dropdownValue1 = value!;
+                          DateTime dt = DateTime.parse(
+                              dropdownValue1.toString() +
+                                  month! +
+                                  dropdownValue4.toString());
+                          print(dt);
+                          duration = AgeCalculator.age(dt);
+                        });
+                      },
+                      items:
+                          list1.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
               ),
+              // Padding(
+              //   padding: EdgeInsets.only(
+              //       bottom: MediaQuery.of(context).size.height * 0.01),
+              //   child: Container(
+              //     height: MediaQuery.of(context).size.height * 0.05,
+              //     child: TextField(
+              //       controller: dateInput,
+              //       onTap: () async {
+              //         DateTime? pickedDate = await showDatePicker(
+              //             context: context,
+              //             initialDate: DateTime.now(),
+              //             firstDate: DateTime(1950),
+              //             //DateTime.now() - not to allow to choose before today.
+              //             lastDate: DateTime(2100));
+              //
+              //         if (pickedDate != null) {
+              //           print(
+              //               pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+              //           String formattedDate =
+              //               DateFormat('yyyy-MM-dd').format(pickedDate);
+              //           print(
+              //               formattedDate); //formatted date output using intl package =>  2021-03-16
+              //           setState(() {
+              //             dateInput.text =
+              //                 formattedDate; //set output date to TextField value.
+              //
+              //             // Find out your age as of today's date 2021-03-08
+              //             duration = AgeCalculator.age(pickedDate);
+              //           });
+              //         } else {}
+              //       },
+              //       keyboardType: TextInputType.emailAddress,
+              //       decoration: InputDecoration(
+              //           filled: true,
+              //           //<-- SEE HERE
+              //           fillColor: Colors.white,
+              //           border: OutlineInputBorder(
+              //             borderSide: BorderSide(
+              //               width: 3,
+              //             ),
+              //             borderRadius: BorderRadius.circular(25.0),
+              //           ),
+              //           labelText: "Date of Birth",
+              //           labelStyle: TextStyle(color: Colors.black45)),
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding:
                     EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
@@ -186,19 +403,19 @@ class _age_calculatorState extends State<age_calculator> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Years: ${duration?.years},",
+                      "Years: ${duration?.years},", //${duration?.years}
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width * 0.057,
                           color: Colors.black),
                     ),
                     Text(
-                      "Months: ${duration?.months}, ",
+                      "Months: ${duration?.months}, ", //${duration?.months}
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width * 0.057,
                           color: Colors.black),
                     ),
                     Text(
-                      "Days: ${duration?.days}",
+                      "Days: ${duration?.days}", //${duration?.days}
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width * 0.057,
                           color: Colors.black),
