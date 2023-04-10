@@ -189,6 +189,8 @@ class _age_calculatorState extends State<age_calculator> {
   PhoneNumber? number;
   String? gender;
   DateDuration? dateOfBirth;
+  bool _isMaleButtonEnabled = false;
+  bool _isFemaleButtonEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -665,27 +667,25 @@ class _age_calculatorState extends State<age_calculator> {
                           height: MediaQuery.of(context).size.height * 0.05,
                           child: ElevatedButton(
                             style: ButtonStyle(
-                              overlayColor:
-                                  MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.pressed))
-                                    return Colors.redAccent; //<-- SEE HERE
-                                  return null; // Defer to the widget's default.
-                                },
-                              ),
-                              backgroundColor:
-                                  MaterialStatePropertyAll(Colors.white),
+                              backgroundColor: _isMaleButtonEnabled
+                                  ? MaterialStateProperty.all<Color>(
+                                      Colors.blue)
+                                  : MaterialStateProperty.all<Color>(
+                                      Colors.white),
                               foregroundColor:
                                   MaterialStatePropertyAll(Colors.black45),
                               shape: MaterialStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50.0),
+                                    borderRadius: BorderRadius.circular(50.0),
                                     side: BorderSide(color: Colors.black45)),
                               ),
                             ),
                             onPressed: () {
                               gender = 'Male';
+                              _isMaleButtonEnabled = true;
+                              _isFemaleButtonEnabled = false;
+                              setState(() {});
                             },
                             child: Text(
                               "Male",
@@ -700,27 +700,25 @@ class _age_calculatorState extends State<age_calculator> {
                           height: MediaQuery.of(context).size.height * 0.05,
                           child: ElevatedButton(
                             style: ButtonStyle(
-                              overlayColor:
-                                  MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.pressed))
-                                    return Colors.redAccent; //<-- SEE HERE
-                                  return null; // Defer to the widget's default.
-                                },
-                              ),
-                              backgroundColor:
-                                  MaterialStatePropertyAll(Colors.white),
+                              backgroundColor: _isFemaleButtonEnabled
+                                  ? MaterialStateProperty.all<Color>(
+                                      Colors.pink)
+                                  : MaterialStateProperty.all<Color>(
+                                      Colors.white),
                               foregroundColor:
                                   MaterialStatePropertyAll(Colors.black45),
                               shape: MaterialStateProperty.all<
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50.0),
+                                    borderRadius: BorderRadius.circular(50.0),
                                     side: BorderSide(color: Colors.black45)),
                               ),
                             ),
                             onPressed: () {
                               gender = 'Female';
+                              _isMaleButtonEnabled = false;
+                              _isFemaleButtonEnabled = true;
+                              setState(() {});
                             },
                             child: Text(
                               "Female",
