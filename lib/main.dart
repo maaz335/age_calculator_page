@@ -367,7 +367,7 @@ class _age_calculatorState extends State<age_calculator> {
                               left: MediaQuery.of(context).size.width * 0.085),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            // border: Border.all(color: Colors.black45),
+                            border: Border.all(color: Colors.black45),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                             boxShadow: [
                               BoxShadow(
@@ -409,7 +409,7 @@ class _age_calculatorState extends State<age_calculator> {
                               left: MediaQuery.of(context).size.width * 0.085),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            // border: Border.all(color: Colors.black45),
+                            border: Border.all(color: Colors.black45),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                             boxShadow: [
                               BoxShadow(
@@ -531,7 +531,7 @@ class _age_calculatorState extends State<age_calculator> {
                           width: MediaQuery.of(context).size.width * 0.3,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            // border: Border.all(color: Colors.black45),
+                            border: Border.all(color: Colors.black45),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                             boxShadow: [
                               BoxShadow(
@@ -681,8 +681,7 @@ class _age_calculatorState extends State<age_calculator> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50.0),
-                                  // side: BorderSide(color: Colors.black45)
-                                ),
+                                    side: BorderSide(color: Colors.black45)),
                               ),
                             ),
                             onPressed: () {
@@ -717,8 +716,7 @@ class _age_calculatorState extends State<age_calculator> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50.0),
-                                  // side: BorderSide(color: Colors.black45)
-                                ),
+                                    side: BorderSide(color: Colors.black45)),
                               ),
                             ),
                             onPressed: () {
@@ -750,7 +748,7 @@ class _age_calculatorState extends State<age_calculator> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0),
-                              // side: BorderSide(color: Colors.black45),
+                              side: BorderSide(color: Colors.black45),
                             ),
                           ),
                         ),
