@@ -322,31 +322,26 @@ class _age_calculatorState extends State<age_calculator> {
                     // ),
                     Container(
                       height: MediaQuery.of(context).size.height * 0.070,
-                      child: PhysicalModel(
-                        borderRadius: BorderRadius.circular(50),
-                        shadowColor: Colors.black45,
-                        color: Colors.white12,
-                        child: IntlPhoneField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              filled: true,
-                              //<-- SEE HERE
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  width: 3,
-                                ),
-                                borderRadius: BorderRadius.circular(25.0),
+                      child: IntlPhoneField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            filled: true,
+                            //<-- SEE HERE
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                width: 3,
                               ),
-                              labelText: 'Phone Number',
-                              labelStyle: TextStyle(color: Colors.black45)),
-                          onChanged: (value) {
-                            number = value;
-                          },
-                          onCountryChanged: (country) {
-                            print('Country changed to: ' + country.name);
-                          },
-                        ),
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            labelText: 'Phone Number',
+                            labelStyle: TextStyle(color: Colors.black45)),
+                        onChanged: (value) {
+                          number = value;
+                        },
+                        onCountryChanged: (country) {
+                          print('Country changed to: ' + country.name);
+                        },
                       ),
                     ),
                     Align(
@@ -409,7 +404,7 @@ class _age_calculatorState extends State<age_calculator> {
                           height: MediaQuery.of(context).size.height * 0.05,
                           width: MediaQuery.of(context).size.width * 0.3,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width * 0.085),
+                              left: MediaQuery.of(context).size.width * 0.045),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(color: Colors.black45),
@@ -569,6 +564,10 @@ class _age_calculatorState extends State<age_calculator> {
                               print(dt);
                               duration = AgeCalculator.age(dt);
                               dateOfBirth = duration;
+                              dropdownValue1 = list1.first;
+                              dropdownValue2 = list2.first;
+                              dropdownValue3 = list3.first;
+                              dropdownValue4 = list8.first;
                               setState(() {});
                             },
                             items: list4
