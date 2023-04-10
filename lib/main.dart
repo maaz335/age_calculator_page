@@ -564,10 +564,10 @@ class _age_calculatorState extends State<age_calculator> {
                               print(dt);
                               duration = AgeCalculator.age(dt);
                               dateOfBirth = duration;
-                              dropdownValue1 = list1.first;
-                              dropdownValue2 = list2.first;
-                              dropdownValue3 = list3.first;
-                              dropdownValue4 = list8.first;
+                              // dropdownValue1 = list1.first;
+                              // dropdownValue2 = list2.first;
+                              // dropdownValue3 = list3.first;
+                              // dropdownValue4 = list8.first;
                               setState(() {});
                             },
                             items: list4
@@ -949,6 +949,11 @@ class _age_calculatorState extends State<age_calculator> {
                                     ),
                                   );
                                 });
+                            dropdownValue1 = list1.first;
+                            dropdownValue2 = list2.first;
+                            dropdownValue3 = list3.first;
+                            dropdownValue4 = list8.first;
+                            setState(() {});
                           } else if (duration!.years < 18 &&
                               gender == 'Female') {
                             showDialog<void>(
@@ -983,6 +988,11 @@ class _age_calculatorState extends State<age_calculator> {
                                     ),
                                   );
                                 });
+                            dropdownValue1 = list1.first;
+                            dropdownValue2 = list2.first;
+                            dropdownValue3 = list3.first;
+                            dropdownValue4 = list8.first;
+                            setState(() {});
                           } else {
                             // TODO:Here you will write code to navigate to next screen
                             // TODO:you can also save local variable to global for further usage
