@@ -327,6 +327,7 @@ class _age_calculatorState extends State<age_calculator> {
                         shadowColor: Colors.black45,
                         color: Colors.white12,
                         child: IntlPhoneField(
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               filled: true,
                               //<-- SEE HERE
