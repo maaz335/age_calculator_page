@@ -950,7 +950,8 @@ class _age_calculatorState extends State<age_calculator> {
                                     ),
                                   );
                                 });
-                          } else if (duration!.years < 18 && gender == 'Male') {
+                          } else if (duration!.years < 18 &&
+                              gender == 'Female') {
                             showDialog<void>(
                                 context: context,
                                 barrierDismissible: false,
