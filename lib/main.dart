@@ -953,6 +953,7 @@ class _age_calculatorState extends State<age_calculator> {
                             dropdownValue2 = list2.first;
                             dropdownValue3 = list3.first;
                             dropdownValue4 = list8.first;
+                            duration = null;
                             setState(() {});
                           } else if (duration!.years < 18 &&
                               gender == 'Female') {
@@ -992,6 +993,7 @@ class _age_calculatorState extends State<age_calculator> {
                             dropdownValue2 = list2.first;
                             dropdownValue3 = list3.first;
                             dropdownValue4 = list8.first;
+                            duration = null;
                             setState(() {});
                           } else {
                             // TODO:Here you will write code to navigate to next screen
